@@ -6,13 +6,13 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="container mx-auto">
-      <header className="py-10">
-        <h1 className="text-3xl font-bold">Latest Updates</h1>
-      </header>
-
-      {/* This part is interactive and runs on the client */}
-      <RssClientFeed feedUrl="https://techcrunch.com/feed/" />
-    </main>
+    <html className='dark'>
+      <main>
+        <header>
+          <h1>Intelligrator</h1>
+        </header>
+        <RssClientFeed feedUrl="https://techcrunch.com/feed/" />
+      </main>
+    </html>
   );
 }
