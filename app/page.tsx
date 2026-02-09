@@ -3,14 +3,13 @@ import RssClientFeed from '@/components/RssClientFeed';
 export const metadata = {
   title: 'RSS Feed Reader',
 };
-
+// https://techcrunch.com/feed/
+// https://www.theverge.com/rss/index.xml
 export default function Page() {
   return (
-    <html className='dark'>
+    <html className='dark'> 
       <main>
-        <header>
-          <h1>Intelligrator</h1>
-        </header>
+        <h1 className='text-center pt-10'>Intelligrator</h1>
         <RssClientFeed feedUrl="https://techcrunch.com/feed/" />
       </main>
     </html>
