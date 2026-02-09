@@ -12,8 +12,21 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+interface Feed {
+  title: string;
+  items: FeedItem[];
+}
+
+interface FeedItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  contentSnippet?: string;
+  content?: string;
+}
+
 export default function RssClientFeed({ feedUrl }: { feedUrl: string }) {
-  const [feed, setFeed] = useState<any>(null);
+  const [feed, setFeed] = useState<Feed>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -37,7 +50,7 @@ export default function RssClientFeed({ feedUrl }: { feedUrl: string }) {
 
   return (
     <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-10 px-5'>
-      {feed.items.map((item: any, index: number) => (
+      {feed.items.map((item: FeedItem, index: number) => (
         <Card className="m-4 mx-4" key={index}>
 
           <CardHeader>
@@ -60,7 +73,7 @@ export default function RssClientFeed({ feedUrl }: { feedUrl: string }) {
           </CardFooter>
 
         </Card>
-      ))};
+      ))}
     </div>
   );
 }
