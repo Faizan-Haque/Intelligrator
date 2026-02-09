@@ -1,7 +1,7 @@
 import RssClientFeed from '@/components/RssClientFeed';
 
 export const metadata = {
-  title: 'RSS Feed Reader',
+  title: 'Intelligrator',
 };
 // https://techcrunch.com/feed/
 // https://www.theverge.com/rss/index.xml
