@@ -7,11 +7,9 @@ export const metadata = {
 // https://www.theverge.com/rss/index.xml
 export default function Page() {
   return (
-    <html className='dark'> 
-      <main>
-        <h1 className='text-center pt-10'>Intelligrator</h1>
-        <RssClientFeed feedUrl="https://techcrunch.com/feed/" />
-      </main>
-    </html>
+    <main>
+      <h1 className="text-center pt-10">Intelligrator</h1>
+      <RssClientFeed feedUrl="https://techcrunch.com/feed/" />
+    </main>
   );
 }
