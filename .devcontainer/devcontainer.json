@@ -1,24 +1,23 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-  "name": "Next.js TS",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node",
-  "forwardPorts": [3000],
-  "portsAttributes": {
-    "3000": {
-      "label": "Next.js",
-      "onAutoForward": "notify"
-    }
-  },
-  "remoteUser": "node",
-  "postCreateCommand": "npm install",
-  "postStartCommand": "npm run dev",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "bradlc.vscode-tailwindcss"
-      ]
-    }
-  }
+    "name": "Next.js TS",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node",
+    "forwardPorts": [3000],
+    "remoteUser": "node",
+    "postCreateCommand": "npm install",
+    "remoteEnv": {
+        "SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
+    },
+    "mounts": [
+      "source=${localEnv:SSH_AUTH_SOCK},target=${localEnv:SSH_AUTH_SOCK},type=bind"
+    ],
+    // "customizations": {
+    //   "vscode": {
+    //     "extensions": [
+    //       "dbaeumer.vscode-eslint",
+    //       "bradlc.vscode-tailwindcss"
+    //     ]
+    //   }
+    // }
 }
